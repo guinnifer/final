@@ -20,7 +20,7 @@ var theatres = require('./theatres.json')
 var Rebase = require('re-base')
 var base = Rebase.createClass({
   apiKey: "AIzaSyBM8lIKsbrq5pnRvf0P0QHJyqvQ9YV3K8k",   // I have put in my Firebase API key
-  databaseURL: "https://software-dev-cf533.firebaseapp.com", // my firebase database URL
+  databaseURL: "https://software-dev-cf533.firebaseio.com/", // my firebase database URL
 })
 
 var MovieList = React.createClass({
@@ -70,7 +70,7 @@ var Header = React.createClass({
           <h1>Buyflix</h1>
         </div>
         <div className="hello col-sm-3 text-center">
-          <h2>Hi there!</h2>
+          <h2>Hi there {this.props.currentUser}!</h2>
         </div>
       </div>
     )
@@ -242,7 +242,7 @@ var App = React.createClass({
       movies: movieData.sort(this.movieCompareByReleased),
       currentMovie: null,
       currentView: 'latest',
-      currentUser: "Brian"
+      currentUser: "Guinnifer"
     }
   },
   componentDidMount: function() {
