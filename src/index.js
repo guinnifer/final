@@ -161,21 +161,22 @@ var App = React.createClass({
   },
   resetMovieListClicked: function() {
     this.setState({
-      movies: movieData.sort(this.movieCompareByReleased)
+      movies: movieData.sort(this.movieCompareByReleased),
+      currentView: 'latest'
     })
   },
   viewChanged: function(view) {
     if (view === 'latest') {
       this.setState({
         currentView: view,
-        movies: movieData.sort(this.movieCompareByReleased),
+        movies: this.state.movies.sort(this.movieCompareByReleased),
         currentMovie: null
       });
     }
     if (view === 'alpha') {
       this.setState({
         currentView: view,
-        movies: movieData.sort(this.movieCompareByTitle),
+        movies: this.state.movies.sort(this.movieCompareByTitle),
         currentMovie: null
       });
     }
