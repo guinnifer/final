@@ -19,8 +19,8 @@ var theatres = require('./theatres.json')
 // Firebase
 var Rebase = require('re-base')
 var base = Rebase.createClass({
-  apiKey: "AIzaSyBM8lIKsbrq5pnRvf0P0QHJyqvQ9YV3K8k",   // replace with your Firebase application's API key
-  databaseURL: "https://software-dev-cf533.firebaseapp.com", // replace with your Firebase application's database URL
+  apiKey: "AIzaSyBM8lIKsbrq5pnRvf0P0QHJyqvQ9YV3K8k",   // I have put in my Firebase API key
+  databaseURL: "https://software-dev-cf533.firebaseapp.com", // my firebase database URL
 })
 
 var MovieList = React.createClass({
@@ -76,7 +76,7 @@ var Header = React.createClass({
     )
   }
 })
-
+// Updated SortBar to work as a proper SortBar. Mainly takes place in viewChanged in var App
 var SortBar = React.createClass({
   viewChanged: function(view) {
     this.props.viewChanged(view)
